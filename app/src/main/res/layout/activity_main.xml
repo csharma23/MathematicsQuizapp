@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent"
+
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:visibility="invisible"
         android:padding="8dp">
 
         <TextView
@@ -22,7 +23,7 @@
             android:gravity="left"
             android:padding="16dp"
             android:text="30s"
-            android:textSize="30sp" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/question_text_view"
@@ -32,7 +33,7 @@
             android:gravity="center"
             android:padding="16dp"
             android:text="78-79"
-            android:textSize="30sp" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/score_text_view"
@@ -42,7 +43,7 @@
             android:gravity="right"
             android:padding="16dp"
             android:text="5/6"
-            android:textSize="30sp" />
+            android:textSize="20sp" />
 
     </LinearLayout>
 
@@ -52,6 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/linear_layout"
         android:layout_margin="40dp"
+        android:visibility="invisible"
         android:padding="8dp">
 
         <Button
@@ -62,8 +64,10 @@
             android:layout_rowWeight="1"
             android:layout_column="0"
             android:layout_columnWeight="1"
+            android:tag="0"
             android:text="-1"
-            android:textSize="40sp" />
+            android:textSize="40sp"
+            android:onClick="checkAnswer"/>
 
         <Button
             android:id="@+id/button_2"
@@ -71,10 +75,12 @@
             android:layout_height="wrap_content"
             android:layout_row="0"
             android:layout_rowWeight="1"
+            android:tag="1"
             android:layout_column="1"
             android:layout_columnWeight="1"
             android:text="-1"
-            android:textSize="40sp" />
+            android:textSize="40sp"
+            android:onClick="checkAnswer"/>
 
         <Button
             android:id="@+id/button_3"
@@ -83,9 +89,11 @@
             android:layout_row="1"
             android:layout_rowWeight="1"
             android:layout_column="0"
+            android:tag="2"
             android:layout_columnWeight="1"
             android:text="-1"
-            android:textSize="40sp" />
+            android:textSize="40sp"
+            android:onClick="checkAnswer"/>
 
         <Button
             android:id="@+id/button_4"
@@ -94,16 +102,18 @@
             android:layout_row="1"
             android:layout_rowWeight="1"
             android:layout_column="1"
+            android:tag="3"
             android:layout_columnWeight="1"
             android:text="-1"
-            android:textSize="40sp" />
+            android:textSize="40sp"
+            android:onClick="checkAnswer"/>
     </GridLayout>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/grid_layout"
-        android:text="Correct Answer"
+        android:text=""
         android:textSize="40sp"
         android:id="@+id/answer_1"/>
     <Button
